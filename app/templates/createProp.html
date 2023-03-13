@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block css %} 
+    <link rel="stylesheet" href="/static/css/properties.css">
+{% endblock%}
+
+{% block main %}
+{% include 'flash_messages.html' %}
+
+
+<h1 class="page-header">Add New Property</h1>
+
+<form method='POST' action="{{url_for('create')}}" enctype="multipart/form-data">
+    {{form.csrf_token}}
+    
+    <div class="input-field">
+        <label>{{form.title.label}}</label>
+        {{form.title}}
+    </div>
+    
+    <div class="input-field">
+        <label>{{form.description.label}}</label>
+        {{form.description}}
+    </div>
+    
+    <div class="row">
+        <div class="input-field">
+            <label>{{form.bedrooms.label}}</label>
+            {{form.bedrooms}}
+        </div>
+        
+        <div class="input-field">
+            <label>{{form.bathrooms.label}}</label>
+            {{form.bathrooms}}
+        </div>
+            
+        <div class="input-field">
+            <label>{{form.price.label}}</label>
+            {{form.price}}
+        </div>
+    </div>
+    
+    <div class="input-field">
+        <label>{{form.property_type.label}}</label>
+        {{form.property_type (class="custom-select mr-sm-2 form-control")}}
+    </div>
+    
+    <div class="input-field">
+        <label>{{form.location.label}}</label>
+        {{form.location}}
+    </div>
+    
+    <div class="input-field">
+        <label>{{form.photo.label}}</label>
+        {{form.photo}}
+    </div>
+    
+    <button class="btn btn-primary" type="submit">Add Property</button>
+
+</form> 
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block css %} 
+    <link rel="stylesheet" href="/static/css/properties.css">
+{% endblock%}
+
+{% block main %}
+{% include 'flash_messages.html' %}
+
+<div class="properties">
+    {% if properties %}
+        {% for property in properties %}
+            <div class="property">
+                <img class="img-container" src="{{ url_for('get_image', filename=property.file_name) }}" alt="File">
+                <div class="property-info">
+                    <p class="title">{{ property.title }}</p>
+                    <p class="location">
+                        {{ property.location }}</p>
+                    <div class="price">
+                        <span>${{ property.price }}</span>
+                    </div>
+                </div>
+                <div class="property-buttons">
+                    <a href="{{ url_for('showProperty', property_id=property.id) }}" class="btn btn-primary">View</a>
+                </div>
+
+
+            </div>
+        {% endfor %}
+    {% endif %}
+</div>
+
+{% endblock %}

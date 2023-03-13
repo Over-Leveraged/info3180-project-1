@@ -1,0 +1,34 @@
+.properties{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+
+.property{
+  width: 350px;
+  height: 26rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+}
+
+.img-container{
+  width: 100%;
+  max-height: 220px;
+  object-fit: cover;
+
+}
+
+.property-info{
+  padding: 5px 1rem;
+}
+
+.title{
+  font-size: 18px;
+  font-weight: 800;
+}
+
+
